@@ -1,3 +1,24 @@
+public class EchiquierPbApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i,j;
+		Case x;
+		EchiquierPb jeu;
+		jeu = new EchiquierPb();
+		
+		for (i=0; i<64; i++)
+		{
+			x = new Case(0);
+			jeu.recevoirCase(x);
+		}
+		//System.out.print(jeu.plateau [0][0].id);
+		jeu.affiche();
+	}
+}
+
+_______________________________________________________________________________________________
+
 public class EchiquierPb {
 	Case [][] plateau;
 	private int nbCaseOccupe;
@@ -52,3 +73,68 @@ public class EchiquierPb {
 	}
 }
 
+__________________________________________________________________________________________________
+public class Case {
+	public int [][] casee;
+	int id;
+	
+	void affecteIdentifiant(int identifiant)
+	{
+	
+	if (identifiant == 0) 
+		{this.casee[0][0]=0; this.casee[0][1]=0; this.casee[0][2]=0;
+		 this.casee[1][0]=0; this.casee[1][1]=0; this.casee[1][2]=0;
+		 this.casee[2][0]=0; this.casee[2][1]=0; this.casee[2][2]=0;
+		}
+		
+	if (identifiant == 1) 
+		{this.casee[0][0]=0; this.casee[0][1]=1; this.casee[0][2]=0;
+		 this.casee[1][0]=0; this.casee[1][1]=1; this.casee[1][2]=1;
+		 this.casee[2][0]=0; this.casee[2][1]=0; this.casee[2][2]=0;
+		}
+	
+	if (identifiant == 2) 
+		{this.casee[0][0]=0; this.casee[0][1]=1; this.casee[0][2]=0;
+		 this.casee[1][0]=1; this.casee[1][1]=1; this.casee[1][2]=0;
+		 this.casee[2][0]=0; this.casee[2][1]=0; this.casee[2][2]=0;
+		}
+	
+		if (identifiant == 3) 
+		{this.casee[0][0]=0;this.casee[0][1]=0;this.casee[0][2]=0;
+		 this.casee[1][0]=0;this.casee[1][1]=1;this.casee[1][2]=1;
+		 this.casee[2][0]=0;this.casee[2][1]=0;this.casee[2][2]=1;
+		}
+		
+		if (identifiant == 4) 
+		{this.casee[0][0]=0;this.casee[0][1]=0;this.casee[0][2]=0;
+		 this.casee[1][0]=1;this.casee[1][1]=1;this.casee[1][2]=0;
+		 this.casee[2][0]=1;this.casee[2][1]=0;this.casee[2][2]=0;
+		}
+		
+		if (identifiant == 5) 
+		{this.casee[0][0]=0;this.casee[0][1]=0;this.casee[0][2]=0;
+		 this.casee[1][0]=1;this.casee[1][1]=1;this.casee[1][2]=1;
+		 this.casee[2][0]=0;this.casee[2][1]=0;this.casee[2][2]=0;
+		}
+		
+		if (identifiant == 6) 
+		{this.casee[0][0]=0;this.casee[0][1]=1;this.casee[0][2]=0;
+		 this.casee[1][0]=0;this.casee[1][1]=1;this.casee[1][2]=0;
+		 this.casee[2][0]=0;this.casee[2][1]=1;this.casee[2][2]=0;
+		}
+		
+		if (identifiant == 7) 
+		{this.casee[0][0]=0;this.casee[0][1]=0;this.casee[0][2]=0;
+		 this.casee[1][0]=0;this.casee[1][1]=1;this.casee[1][2]=0;
+		 this.casee[2][0]=0;this.casee[2][1]=0;this.casee[2][2]=0;
+		}
+	}
+	
+	Case(int identifiant){
+	this.casee=new int [3][3];
+	this.id=identifiant;
+	this.affecteIdentifiant(identifiant);
+	}
+}
+
+_________________________________________________________________________________________________________________________
